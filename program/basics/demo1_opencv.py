@@ -147,8 +147,62 @@ class openCv:
         cv2.waitKey()
         cv2.destroyAllWindows()
 
+    def example_3_19(self):
+        """
+        演示腐蚀操作
+        :return:
+        """
+        img = cv2.imread(self.url)
+
+        # 先进行图像的二值化处理
+        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)  # 要二值化必须要先变成灰度图像
+        _, binary = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)
+
+        kernel = np.ones(shape=[3, 3], dtype=np.uint8)
+
+        erode_img = cv2.erode(binary, kernel=kernel, iterations=5)
+        cv2.imshow('erode_img', np.hstack((gray, erode_img)))
+
+        cv2.waitKey()
+        cv2.destroyAllWindows()
+
+    def example_3_20(self):
+        """
+        演示膨胀操作
+        :return:
+        """
+        img = cv2.imread(self.url)
+        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)  # 要二值化必须要先变成灰度图像
+        _, binary = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)
+
+        kernel = np.ones(shape=[3, 3], dtype=np.uint8)
+
+        dilate_img = cv2.dilate(binary, kernel=kernel, iterations=5)
+        cv2.imshow('erode_img', np.hstack((gray, dilate_img)))
+
+        cv2.waitKey()
+        cv2.destroyAllWindows()
+
+    def custom_0(self):
+        """
+        开运算与闭运算
+        :return:
+        """
+        img = cv2.imread(self.url)
+        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)  # 转灰度图
+        _, binary = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)  # 转二值图
+        kernel = np.ones(shape=[3, 3], dtype=np.uint8)
+
+        dstOpen = cv2.morphologyEx(binary, cv2.MORPH_OPEN, kernel)
+        dstClose = cv2.morphologyEx(binary, cv2.MORPH_CLOSE, kernel)
+
+        cv2.imshow('open & close', np.hstack([dstOpen,dstClose]))
+
+        cv2.waitKey()
+        cv2.destroyAllWindows()
+
     def __init__(self):
-        self.example_3_17()
+        self.custom_0()
 
 
 if __name__ == '__main__':

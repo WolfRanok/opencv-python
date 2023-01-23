@@ -1,6 +1,8 @@
 from analysis import analysis
 from cut import cut_card
 from distinguish import cracking_code
+import numpy as np
+from PIL import Image, ImageDraw, ImageFont
 import cv2
 
 """
@@ -16,7 +18,7 @@ class final_distinguish_car:
     def __init__(self, url=r'image_car\4.jpg', debug=True):
         ## 车牌的提取
         self.analysis = analysis(url, debug=debug)
-        License_plate = self.analysis.start_find()
+        License_plate, contour = self.analysis.start_find()
         self.show(License_plate)
 
         ## 车牌字符的分割
@@ -27,7 +29,27 @@ class final_distinguish_car:
         self.cracking_code = cracking_code()
         self.card = self.cracking_code.findAll(images)
 
+        ## 展示结果
+        img = cv2.imread(url)
+        contour[1] -= 50  # 把位置留出来
+        img = self.cv2ImgAddText(img, self.card, *contour, (255,0,0), 50)
+
+        self.show(img)
+
+    def cv2ImgAddText(self, img, text, left, top, textColor=(0, 255, 0), textSize=20):
+        if isinstance(img, np.ndarray):  # 判断是否OpenCV图片类型
+            img = Image.fromarray(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
+        # 创建一个可以在给定图像上绘图的对象
+        draw = ImageDraw.Draw(img)
+        # 字体的格式
+        fontStyle = ImageFont.truetype(
+            "simsun.ttc", textSize, encoding="utf-8")
+        # 绘制文本
+        draw.text((left, top), text, textColor, font=fontStyle)
+        # 转换回OpenCV格式
+        return cv2.cvtColor(np.asarray(img), cv2.COLOR_RGB2BGR)
+
 
 if __name__ == '__main__':
-    car = final_distinguish_car()
-    print(car.card)
+    car = final_distinguish_car(debug=True)
+    # print(car.card)

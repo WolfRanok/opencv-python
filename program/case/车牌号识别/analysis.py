@@ -17,10 +17,10 @@ class analysis:
         """
 
         self.show(self.img)
-        car_card = self.handle(self.img)
+        car_card,contour = self.handle(self.img)
         car_card = self.bigger(car_card)
         self.show(car_card)
-        return car_card
+        return car_card,contour
 
     @staticmethod
     def bigger(img, multiple=5):
@@ -111,7 +111,7 @@ class analysis:
         copy_img = cv2.rectangle(img.copy(), contour[0], contour[1], (0, 0, 255), 3)  # 将轮廓画在BGR副本上
         self.show(copy_img)
 
-        return img[contour[0][1]:contour[1][1], contour[0][0]:contour[1][0]]
+        return img[contour[0][1]:contour[1][1], contour[0][0]:contour[1][0]],contour[0]
 
     @staticmethod
     def get_img(url):

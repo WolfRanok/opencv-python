@@ -30,7 +30,7 @@ class cracking_verification_code:
     def get_verification_code(self):
         img = self.get_image()
         code = pytesseract.image_to_string(img, lang='eng', config=tessdata_dir_config)
-        return re.sub('\s','',code)
+        return re.sub('\s', '', code)
 
     def bigger(self, img, number=3):
         return cv2.resize(img, None, fx=number, fy=number)
@@ -42,10 +42,10 @@ class cracking_verification_code:
         """
         img = cv2.imread(url)
         return cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        # return img
 
 
 if __name__ == '__main__':
     response = cracking_verification_code()
     print(response.get_verification_code())
     response.show_verification()
-

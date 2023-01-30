@@ -78,7 +78,7 @@ class final_distinguish_car_machine:
         self.show(License_plate)
         print('车牌已提取')
 
-        ## 车牌字符的分割 
+        ## 车牌字符的分割
         self.cut_card = cut_card(img=License_plate, debug=debug)
         images = self.cut_card.handle_cut()
         print('车牌字符已经分割完成')

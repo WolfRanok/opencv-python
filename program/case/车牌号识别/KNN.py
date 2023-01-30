@@ -105,9 +105,9 @@ class KNN:
 
         result = self.knn.predict(x_test)
         correct = np.count_nonzero(result == y_test)
-        print(result, y_test)
+        # print(result, y_test)
         accuracy = correct / result.size
-        print(accuracy)
+        print("训练模型正确率：", accuracy)
 
         return accuracy
 
@@ -121,7 +121,7 @@ class KNN:
             img = self.read_image(img)
         img = self.cut_img(img)
         number = self.knn.predict([img])[0]
-        print(self.templateDict[number])
+        # print(self.templateDict[number])
         return self.templateDict[number]
 
     def findAll(self, plateChars):
@@ -137,4 +137,4 @@ class KNN:
 
 if __name__ == '__main__':
     response = KNN()
-    response.find_char('')
+

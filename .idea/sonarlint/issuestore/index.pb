@@ -11,3 +11,23 @@ V
 &program/case/验证码识别/spider.py,0\7\07dbc7d6bbd7bd3be29490e4e71659a67b9ffdf8
 <
 work/main.py,c\4\c454176e1166584651e325f96222374fd4c2c2c2
+q
+Aprogram/case/基于机器学习算法实现的字符识别/KNN.py,5\9\597277418e45b5d3b5b903a1ffae9da189a5236d
+S
+#program/case/车牌号识别/cut.py,6\a\6a900c0c0bf088be07f1d90417131dc31f75525d
+S
+#program/case/车牌号识别/KNN.py,e\6\e6d6d9ee327456024bf42219be0cfb5a5d28b5a8
+V
+&program/case/屏幕字符提取/CMV.py,a\7\a7da154e2bc8a65d82681fedf3ce00f907b30416
+V
+&program/case/屏幕字符提取/cut.py,1\d\1d2059020f07ad45fddb834387bea601452246bd
+T
+$program/case/车牌号识别/main.py,d\9\d90bbd5a920b41cb2237e542af0140fd4cafedc2
+W
+'program/case/屏幕字符提取/main.py,1\d\1db095dbae8f7fcef4e2a702c0b25d2bc49066b6
+[
++program/case/车牌号识别/distinguish.py,4\b\4bfd0f046ab9841b586ff860adbbc68fc9ae70fb
+X
+(program/case/车牌号识别/analysis.py,0\8\08211c6c9a788a37fc281d992853b2f1f8ce4678
+[
++program/case/屏幕字符提取/sentence.py,7\0\707d5c56088e9de1fba4d9bd6cd7429fc8de7791

@@ -5,6 +5,7 @@ import cv2
 """
 
 
+# noinspection PyShadowingNames
 class analysis:
     def __init__(self, url=r'image_car\4.jpg', debug=True):
         self.debug = debug

@@ -109,5 +109,5 @@ class final_distinguish_car_machine:
 
 
 if __name__ == '__main__':
-    car = final_distinguish_car_machine(r'image_car\2.jpg',debug=True)
+    car = final_distinguish_car_machine(r'image_car\4.jpg',debug=True)
     # print(car.card)

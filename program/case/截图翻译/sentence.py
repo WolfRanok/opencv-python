@@ -2,13 +2,13 @@ import cv2
 import numpy as np
 
 """
-此脚本用于对含有字符的图片进行提取，注意这个脚本需要拥有句子提取的能力
+此脚本用于对含有字符的图片进行提取，注意这个脚本需要拥有句子提取的能力，用于分离单词
 """
 
 
 class sentence:
     debug = True
-    min_area = 500
+    min_area = 200
 
     def show(self, img=None):
         """
@@ -58,7 +58,7 @@ class sentence:
         #     self.show(image)
 
         ## 膨胀
-        image = cv2.morphologyEx(binary, cv2.MORPH_DILATE, kernel, iterations=6)
+        image = cv2.morphologyEx(binary, cv2.MORPH_DILATE, kernel, iterations=4)
         if self.debug:
             self.show(image)
 

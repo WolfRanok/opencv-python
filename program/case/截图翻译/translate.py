@@ -24,7 +24,7 @@ def wait(func):
 
 
 class translation_queue:
-    number = 10  # 默认开启界面数
+    number = 5  # 默认开启界面数
     queue = []  # 浏览器队列
     hh, tt = 0, 0  # 队列头，队列尾
 

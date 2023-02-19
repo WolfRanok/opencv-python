@@ -25,3 +25,15 @@ W
 'program/case/截图翻译/brush_data.py,3\7\379bb586e41df05af7e8ff8da61789fc11f457d7
 T
 $program/case/车牌号识别/main.py,d\9\d90bbd5a920b41cb2237e542af0140fd4cafedc2
+Y
+)program/case/截图翻译/cut_sentence.py,0\e\0eb0e709cb0f2ba18cf1754284cfcb8bbc28e07c
+P
+ program/case/截图翻译/cut.py,1\3\1387435233aee14952effcf6aa73e43c889e6f68
+P
+ program/case/截图翻译/SVM.py,a\a\aac21c537403b460904d4900f58edc4f3dd00633
+U
+%program/case/截图翻译/sentence.py,4\c\4cd8d914293d14b539196be9eb3303115fb2477b
+V
+&program/case/截图翻译/translate.py,c\0\c0b0f8598a5110f3990fa329deb765856d763ac5
+Q
+!program/case/截图翻译/main.py,e\f\ef39f0ec9acc5c11d49f3a1b3ef9fbf588a6be04

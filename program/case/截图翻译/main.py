@@ -1,5 +1,4 @@
 ## 以下为系统库函数
-import re
 import time
 from threading import Thread,Lock
 import cv2
